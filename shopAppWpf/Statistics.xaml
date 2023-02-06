@@ -1,0 +1,31 @@
+﻿<Window x:Class="shopAppWpf.Statistics"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:shopAppWpf"
+        mc:Ignorable="d"
+        Title="Статистика" Height="450" Width="728.2" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid Name="Data" HorizontalAlignment="Left" Height="205" Margin="80,195,0,0" VerticalAlignment="Top" Width="560">
+            <DataGrid.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="1" Color="#FF222831" Opacity="0.5"/>
+            </DataGrid.Effect>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Path=IdStatistics}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Path=DateStatistics}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Расходы" Binding="{Binding Path=ExpenditureStatistics}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Доходы" Binding="{Binding Path=ProfitStatistics}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Дата" HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="date" HorizontalAlignment="Left" Height="23" Margin="300,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF00ADB5" SelectionBrush="#FF00ADB5"/>
+
+        <Label Content="Расходы" HorizontalAlignment="Left" Margin="180,75,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="expenditure" HorizontalAlignment="Left" Height="23" Margin="180,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF00ADB5" SelectionBrush="#FF00ADB5"/>
+        <Label Content="Доходы" HorizontalAlignment="Left" Margin="420,75,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="profit" HorizontalAlignment="Left" Height="23" Margin="420,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF00ADB5" SelectionBrush="#FF00ADB5"/>
+        
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="310,148,0,0" VerticalAlignment="Top" Width="95" Click="Button_Add" Background="#FF00ADB5" BorderBrush="#FF38CDD4"/>
+    </Grid>
+</Window>
